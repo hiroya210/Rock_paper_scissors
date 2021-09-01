@@ -13,20 +13,24 @@ function computerMove(){
     }
 }
 function playerMove(){
-    playerChoice = prompt("make your move","").toLowerCase();
+    playerChoice = prompt("make your move","rock").toLowerCase();
+
+    if (playerChoice === ""){
+        playerMove();
+    }
 }
 function playGame(playerChoice, computerChoice){
     
-    if(playerChoice == computerChoice){
+    if(playerChoice === computerChoice){
         alert("It's a tie!");
     }
-    else if(playerChoice == "rock" && computerChoice == "paper"){
+    else if(playerChoice === "rock" && computerChoice === "paper"){
         alert("You Lose!");
     }
-    else if(playerChoice == "scissors" && computerChoice == "rock"){
+    else if(playerChoice === "scissors" && computerChoice === "rock"){
         alert("You Lose!");
     }
-    else if(playerChoice == "paper" && computerChoice === "scissors"){
+    else if(playerChoice === "paper" && computerChoice === "scissors"){
         alert("You Lose!")
     }
     else{
@@ -39,6 +43,10 @@ playerMove();
 computerMove();
 playGame(playerChoice,computerChoice);
 }
+
+game();
+game();
+game();
 
 
 
