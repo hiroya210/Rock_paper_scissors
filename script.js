@@ -13,9 +13,9 @@ function computerMove(){
     }
 }
 function playerMove(){
-    playerChoice = prompt("make your move","rock").toLowerCase();
+    playerChoice = prompt("make your move","").toLowerCase();
 
-    if (playerChoice === ""){
+    if (playerChoice.toLowerCase() === ""){
         playerMove();
     }
 }
@@ -33,10 +33,21 @@ function playGame(playerChoice, computerChoice){
     else if(playerChoice === "paper" && computerChoice === "scissors"){
         alert("You Lose!")
     }
+    else if(playerChoice === "paper" && computerChoice === "rock"){
+    alert("You Won!");
+    }
+    else if(playerChoice === "rock" && computerChoice === "scissors"){
+    alert("You Won!");
+    }
+    else if(playerChoice === "scissors" && computerChoice === "paper"){
+    alert("You Won!")
+    }
     else{
-        alert("You Won!");
+        alert("Invalid Move! Try Again!")
+        game();
     }
 }
+   
 
 function game(){
 playerMove();
